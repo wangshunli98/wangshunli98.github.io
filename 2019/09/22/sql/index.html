@@ -19,7 +19,7 @@
 
   
 
-  <title>我的第一篇博客 | 王顺利的个人博客</title>
+  <title>SQL语句 | 王顺利的个人博客</title>
 
   
 
@@ -91,13 +91,13 @@
           <div class="type-wrap">
             
           </div>
-          <h1 class="title-wrap">我的第一篇博客</h1>
+          <h1 class="title-wrap">SQL语句</h1>
           <div class="meta-wrap">
             <strong>王顺利</strong>
             <span>发布于</span>
             
   <a href="javascript:;" class="article-date">
-    <time datetime="2019-09-21T15:05:35.316Z" itemprop="datePublished">2019-09-21</time>
+    <time datetime="2019-09-22T06:54:17.522Z" itemprop="datePublished">2019-09-22</time>
   </a>
 
           </div>
@@ -119,19 +119,21 @@
     
 
     <div class="article-entry">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <p>Welcome to <a href="https://wangshunli98.github.io/" target="_blank" rel="noopener">我的博客</a>! </p>
+<h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line">IF EXISTS (SELECT * FROM SysDataBases WHERE NAME = <span class="string">'NBA'</span>)</span><br><span class="line">DROP DATABASE NBA</span><br><span class="line">GO</span><br><span class="line">CREATE DATABASE NBA</span><br><span class="line">ON PRIMARY</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA.mdf'</span>,</span><br><span class="line">	SIZE = 5MB,</span><br><span class="line">	FILEGROWTH = 1MB</span><br><span class="line">)</span><br><span class="line">LOG ON</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA_log'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA_log.ldf'</span>,</span><br><span class="line">	SIZE = 1MB,</span><br><span class="line">	FILEGROWTH = 10%</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>###select语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name；</span><br><span class="line"></span><br><span class="line">SELECT * FROM table_name WHERE 条件;</span><br><span class="line"> </span><br><span class="line">SELECT * FROM table_name ORDER BY  条件  ASC|DESC;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>###SQL INSERT INTO 语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name (column1,column2,column3,...)</span><br><span class="line">VALUES (value1,value2,value3,...);</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>###SQL UPDATE 语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name</span><br><span class="line">SET column1=value1,column2=value2,...</span><br><span class="line">WHERE some_column=some_value;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>###SQL DELETE 语句</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name</span><br><span class="line">WHERE some_column=some_value;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -144,15 +146,15 @@
 <nav class="card-container card-article-nav">
   <div class="card-wrap">
     
+    
       <div class="card-item">
         <article>
           
-          <a class="card-link article-nav-link" href="/2019/09/22/sql/"></a>
-          <div class="article-nav-caption">Newer</div>
-          <div class="article-nav-title">SQL语句</div>
+          <a class="card-link article-nav-link" href="/2019/09/21/hello-world/"></a>
+          <div class="article-nav-caption">Older</div>
+          <div class="article-nav-title">我的第一篇博客</div>
         </article>
       </div>
-    
     
   </div>
 </nav>
