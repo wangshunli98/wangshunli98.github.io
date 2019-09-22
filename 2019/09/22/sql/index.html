@@ -134,6 +134,32 @@
 <p>###SQL DELETE 语句</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name</span><br><span class="line">WHERE some_column=some_value;</span><br></pre></td></tr></table></figure>
 
+<p>###SQL LIKE 操作符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name LIKE pattern;</span><br></pre></td></tr></table></figure>
+
+<p>###SQL IN 操作符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name IN (value1,value2,...);</span><br></pre></td></tr></table></figure>
+
+<p>###SQL BETWEEN 操作符</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name BETWEEN value1 AND value2;</span><br></pre></td></tr></table></figure>
+
+<p>##SQL 别名</p>
+<p>###列的 SQL 别名语法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name AS alias_name</span><br><span class="line">FROM table_name;</span><br></pre></td></tr></table></figure>
+
+<p>###表的 SQL 别名语法</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name AS alias_name;</span><br></pre></td></tr></table></figure>
+
+<p>###SQL SELECT INTO 语句（SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 新表</span><br><span class="line">AS</span><br><span class="line">SELECT * FROM 旧表</span><br></pre></td></tr></table></figure>
+
+<p>###SQL 约束（Constraints）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NOT NULL - 指示某列不能存储 NULL 值。</span><br><span class="line">UNIQUE - 保证某列的每行必须有唯一的值。</span><br><span class="line">PRIMARY KEY - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</span><br><span class="line">FOREIGN KEY - 保证一个表中的数据匹配另一个表中的值的参照完整性。</span><br><span class="line">CHECK - 保证列中的值符合指定的条件。</span><br><span class="line">DEFAULT - 规定没有给列赋值时的默认值。</span><br></pre></td></tr></table></figure>
+
+<p>###TRUNCATE TABLE 语句（仅仅需要删除表内的数据，但并不删除表本身）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE table_name</span><br></pre></td></tr></table></figure>
+
+<p>##参考自 <a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></p>
 
     </div>
 
