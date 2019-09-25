@@ -56,17 +56,17 @@
   };
 </script>
 
-  <meta name="description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+  <meta name="description" content="Welcome to 我的博客!  记录一下常用的SQL语句">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL常用简单语句">
 <meta property="og:url" content="http://yoursite.com/2019/09/22/sql常用语句/index.html">
 <meta property="og:site_name" content="王顺利的个人博客">
-<meta property="og:description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+<meta property="og:description" content="Welcome to 我的博客!  记录一下常用的SQL语句">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-25T13:54:59.963Z">
+<meta property="og:updated_time" content="2019-09-25T14:17:17.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL常用简单语句">
-<meta name="twitter:description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+<meta name="twitter:description" content="Welcome to 我的博客!  记录一下常用的SQL语句">
   <link rel="canonical" href="http://yoursite.com/2019/09/22/sql常用语句/">
 
 
@@ -295,7 +295,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-25 21:54:59" itemprop="dateModified" datetime="2019-09-25T21:54:59+08:00">2019-09-25</time>
+                <time title="修改时间：2019-09-25 22:17:17" itemprop="dateModified" datetime="2019-09-25T22:17:17+08:00">2019-09-25</time>
               </span>
             
           
@@ -326,7 +326,8 @@
 
       
         <p>Welcome to <a href="https://wangshunli98.github.io/" target="_blank" rel="noopener">我的博客</a>! </p>
-<h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line">IF EXISTS (SELECT * FROM SysDataBases WHERE NAME = <span class="string">'NBA'</span>)</span><br><span class="line">DROP DATABASE NBA</span><br><span class="line">GO</span><br><span class="line">CREATE DATABASE NBA</span><br><span class="line">ON PRIMARY</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA.mdf'</span>,</span><br><span class="line">	SIZE = 5MB,</span><br><span class="line">	FILEGROWTH = 1MB</span><br><span class="line">)</span><br><span class="line">LOG ON</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA_log'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA_log.ldf'</span>,</span><br><span class="line">	SIZE = 1MB,</span><br><span class="line">	FILEGROWTH = 10%</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2><a id="more"></a>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line">IF EXISTS (SELECT * FROM SysDataBases WHERE NAME = <span class="string">'NBA'</span>)</span><br><span class="line">DROP DATABASE NBA</span><br><span class="line">GO</span><br><span class="line">CREATE DATABASE NBA</span><br><span class="line">ON PRIMARY</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA.mdf'</span>,</span><br><span class="line">	SIZE = 5MB,</span><br><span class="line">	FILEGROWTH = 1MB</span><br><span class="line">)</span><br><span class="line">LOG ON</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA_log'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA_log.ldf'</span>,</span><br><span class="line">	SIZE = 1MB,</span><br><span class="line">	FILEGROWTH = 10%</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <h3 id="select语句"><a href="#select语句" class="headerlink" title="select语句"></a>select语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name；</span><br><span class="line"></span><br><span class="line">SELECT * FROM table_name WHERE 条件;</span><br><span class="line"> </span><br><span class="line">SELECT * FROM table_name ORDER BY  条件  ASC|DESC;</span><br></pre></td></tr></table></figure>
 

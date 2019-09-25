@@ -505,7 +505,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-25 21:54:59" itemprop="dateModified" datetime="2019-09-25T21:54:59+08:00">2019-09-25</time>
+                <time title="修改时间：2019-09-25 22:17:17" itemprop="dateModified" datetime="2019-09-25T22:17:17+08:00">2019-09-25</time>
               </span>
             
           
@@ -536,33 +536,16 @@
 
       
           <p>Welcome to <a href="https://wangshunli98.github.io/" target="_blank" rel="noopener">我的博客</a>! </p>
-<h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line">IF EXISTS (SELECT * FROM SysDataBases WHERE NAME = <span class="string">'NBA'</span>)</span><br><span class="line">DROP DATABASE NBA</span><br><span class="line">GO</span><br><span class="line">CREATE DATABASE NBA</span><br><span class="line">ON PRIMARY</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA.mdf'</span>,</span><br><span class="line">	SIZE = 5MB,</span><br><span class="line">	FILEGROWTH = 1MB</span><br><span class="line">)</span><br><span class="line">LOG ON</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA_log'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA_log.ldf'</span>,</span><br><span class="line">	SIZE = 1MB,</span><br><span class="line">	FILEGROWTH = 10%</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<h3 id="select语句"><a href="#select语句" class="headerlink" title="select语句"></a>select语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name；</span><br><span class="line"></span><br><span class="line">SELECT * FROM table_name WHERE 条件;</span><br><span class="line"> </span><br><span class="line">SELECT * FROM table_name ORDER BY  条件  ASC|DESC;</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-INSERT-INTO-语句"><a href="#SQL-INSERT-INTO-语句" class="headerlink" title="SQL INSERT INTO 语句"></a>SQL INSERT INTO 语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name (column1,column2,column3,...)</span><br><span class="line">VALUES (value1,value2,value3,...);</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-UPDATE-语句"><a href="#SQL-UPDATE-语句" class="headerlink" title="SQL UPDATE 语句"></a>SQL UPDATE 语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE table_name</span><br><span class="line">SET column1=value1,column2=value2,...</span><br><span class="line">WHERE some_column=some_value;</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-DELETE-语句"><a href="#SQL-DELETE-语句" class="headerlink" title="SQL DELETE 语句"></a>SQL DELETE 语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM table_name</span><br><span class="line">WHERE some_column=some_value;</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-LIKE-操作符"><a href="#SQL-LIKE-操作符" class="headerlink" title="SQL LIKE 操作符"></a>SQL LIKE 操作符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name LIKE pattern;</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-IN-操作符"><a href="#SQL-IN-操作符" class="headerlink" title="SQL IN 操作符"></a>SQL IN 操作符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name IN (value1,value2,...);</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-BETWEEN-操作符"><a href="#SQL-BETWEEN-操作符" class="headerlink" title="SQL BETWEEN 操作符"></a>SQL BETWEEN 操作符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name BETWEEN value1 AND value2;</span><br></pre></td></tr></table></figure>
-
-<h2 id="SQL-别名"><a href="#SQL-别名" class="headerlink" title="SQL 别名"></a>SQL 别名</h2><h3 id="列的-SQL-别名语法"><a href="#列的-SQL-别名语法" class="headerlink" title="列的 SQL 别名语法"></a>列的 SQL 别名语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name AS alias_name</span><br><span class="line">FROM table_name;</span><br></pre></td></tr></table></figure>
-
-<h3 id="表的-SQL-别名语法"><a href="#表的-SQL-别名语法" class="headerlink" title="表的 SQL 别名语法"></a>表的 SQL 别名语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name AS alias_name;</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-SELECT-INTO-语句（SELECT-INTO-语句从一个表复制数据，然后把数据插入到另一个新表中。）"><a href="#SQL-SELECT-INTO-语句（SELECT-INTO-语句从一个表复制数据，然后把数据插入到另一个新表中。）" class="headerlink" title="SQL SELECT INTO 语句（SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。）"></a>SQL SELECT INTO 语句（SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 新表</span><br><span class="line">AS</span><br><span class="line">SELECT * FROM 旧表</span><br></pre></td></tr></table></figure>
-
-<h3 id="SQL-约束（Constraints）"><a href="#SQL-约束（Constraints）" class="headerlink" title="SQL 约束（Constraints）"></a>SQL 约束（Constraints）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">NOT NULL - 指示某列不能存储 NULL 值。</span><br><span class="line">UNIQUE - 保证某列的每行必须有唯一的值。</span><br><span class="line">PRIMARY KEY - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</span><br><span class="line">FOREIGN KEY - 保证一个表中的数据匹配另一个表中的值的参照完整性。</span><br><span class="line">CHECK - 保证列中的值符合指定的条件。</span><br><span class="line">DEFAULT - 规定没有给列赋值时的默认值。</span><br></pre></td></tr></table></figure>
-
-<h3 id="TRUNCATE-TABLE-语句（仅仅需要删除表内的数据，但并不删除表本身）"><a href="#TRUNCATE-TABLE-语句（仅仅需要删除表内的数据，但并不删除表本身）" class="headerlink" title="TRUNCATE TABLE 语句（仅仅需要删除表内的数据，但并不删除表本身）"></a>TRUNCATE TABLE 语句（仅仅需要删除表内的数据，但并不删除表本身）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TRUNCATE TABLE table_name</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考自-菜鸟教程"><a href="#参考自-菜鸟教程" class="headerlink" title="参考自 菜鸟教程"></a>参考自 <a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></h2>
+<h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/09/22/sql常用语句/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
