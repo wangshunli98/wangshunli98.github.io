@@ -1,133 +1,248 @@
 <!DOCTYPE html>
-<html lang="en">
-<head><meta name="generator" content="Hexo 3.9.0">
+
+
+
+
+
+<html lang="zh-CN">
+<head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
 
-  
-    <meta name="description" content="记录生活，记录学习">
-  
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
 
-  
 
-  
-    <meta name="author" content="王顺利">
-  
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
 
-  
 
-  
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL常用简单语句">
+<meta property="og:url" content="http://yoursite.com/2019/09/22/sql常用语句/index.html">
+<meta property="og:site_name" content="王顺利的个人博客">
+<meta property="og:description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-22T08:03:35.779Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL常用简单语句">
+<meta name="twitter:description" content="Welcome to 我的博客!  记录一下常用的SQL语句创建数据库1234567891011121314151617181920USE masterGOIF EXISTS (SELECT * FROM SysDataBases WHERE NAME = &apos;NBA&apos;)DROP DATABASE NBAGOCREATE DATABASE NBAON PRIMARY(	NAME = &apos;NBA&apos;,	F">
+  <link rel="canonical" href="http://yoursite.com/2019/09/22/sql常用语句/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
 
   <title>SQL常用简单语句 | 王顺利的个人博客</title>
-
   
 
-  
-    <link rel="icon" href="/favicon.ico">
-  
 
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-    <link href="https://cdn.bootcss.com/highlight.js/9.15.6/styles/default.min.css" rel="stylesheet">
-  
 
-  <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
 </head>
-<body>
-  <div id="container">
-    <!-- header -->
-<header class="header">
-  <div class="header-container ">
-    <nav class="header-navbar">
-      <div class="header-navbar-left">
-        <h1 class="header-navbar-logo">
-          <a href="/">
-            
-              <img src="https://qiniu.miiiku.xyz/src/images/logo.png" alt="王顺利的个人博客">
-            
-          </a>
-        </h1>
-      </div>
-      <div class="header-navbar-right">
-        <div class="header-navbar-btn">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <ul class="header-navbar-list">
-          
-            <li class="header-navbar-item"><a href="/">首页</a></li>
-          
-            <li class="header-navbar-item"><a href="/about">关于</a></li>
-          
-            <li class="header-navbar-item"><a href="/tags">标签</a></li>
-          
-            <li class="header-navbar-item"><a href="/categories">分类</a></li>
-          
-            <li class="header-navbar-item"><a href="/messages">留言板</a></li>
-          
-        </ul>
-      </div>
-    </nav>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">王顺利的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
   </div>
-</header>
 
-    <section id="main"><!-- 文章详情页 -->
-
-
-<!-- banner container -->
-<div class="banner-container">
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-    
-      <div class="banner-content post-content no-post-image">
-        <div class="post-text">
-          <div class="type-wrap">
-            
-          </div>
-          <h1 class="title-wrap">SQL常用简单语句</h1>
-          <div class="meta-wrap">
-            <strong>王顺利</strong>
-            <span>发布于</span>
-            
-  <a href="javascript:;" class="article-date">
-    <time datetime="2019-09-22T06:54:17.522Z" itemprop="datePublished">2019-09-22</time>
-  </a>
-
-          </div>
-        </div>
-      </div>
-    
-  
-
-  
-  
-
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-<!-- 文章内容 -->
 
-<div class="body-container">
-  <article id="article-content" class="main-container article-content zoom">
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/22/sql常用语句/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="王顺利">
+      <meta itemprop="description" content="记录生活，记录学习">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="王顺利的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">SQL常用简单语句
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-22 14:54:17 / 修改时间：16:03:35" itemprop="dateCreated datePublished" datetime="2019-09-22T14:54:17+08:00">2019-09-22</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
     
     
+    
+    <div class="post-body" itemprop="articleBody">
 
-    <div class="article-entry">
-      <p>Welcome to <a href="https://wangshunli98.github.io/" target="_blank" rel="noopener">我的博客</a>! </p>
+      
+        <p>Welcome to <a href="https://wangshunli98.github.io/" target="_blank" rel="noopener">我的博客</a>! </p>
 <h2 id="记录一下常用的SQL语句"><a href="#记录一下常用的SQL语句" class="headerlink" title="记录一下常用的SQL语句"></a>记录一下常用的SQL语句</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">USE master</span><br><span class="line">GO</span><br><span class="line">IF EXISTS (SELECT * FROM SysDataBases WHERE NAME = <span class="string">'NBA'</span>)</span><br><span class="line">DROP DATABASE NBA</span><br><span class="line">GO</span><br><span class="line">CREATE DATABASE NBA</span><br><span class="line">ON PRIMARY</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA.mdf'</span>,</span><br><span class="line">	SIZE = 5MB,</span><br><span class="line">	FILEGROWTH = 1MB</span><br><span class="line">)</span><br><span class="line">LOG ON</span><br><span class="line">(</span><br><span class="line">	NAME = <span class="string">'NBA_log'</span>,</span><br><span class="line">	FILENAME = <span class="string">'D:\sql\db\NBA_log.ldf'</span>,</span><br><span class="line">	SIZE = 1MB,</span><br><span class="line">	FILEGROWTH = 10%</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <h3 id="select语句"><a href="#select语句" class="headerlink" title="select语句"></a>select语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name；</span><br><span class="line"></span><br><span class="line">SELECT * FROM table_name WHERE 条件;</span><br><span class="line"> </span><br><span class="line">SELECT * FROM table_name ORDER BY  条件  ASC|DESC;</span><br></pre></td></tr></table></figure>
@@ -157,72 +272,184 @@
 <h2 id="参考自-菜鸟教程"><a href="#参考自-菜鸟教程" class="headerlink" title="参考自 菜鸟教程"></a>参考自 <a href="https://www.runoob.com/sql/sql-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a></h2>
     </div>
 
-    <div class="article-footer">
+    
+    
+    
+        
       
-    </div>
 
-    <div class="article-navs">
-      
-<nav class="card-container card-article-nav">
-  <div class="card-wrap">
-    
-      <div class="card-item">
-        <article>
-          
-          <a class="card-link article-nav-link" href="/2019/09/23/冒泡排序/"></a>
-          <div class="article-nav-caption">Newer</div>
-          <div class="article-nav-title">冒泡排序</div>
-        </article>
-      </div>
-    
-    
-      <div class="card-item">
-        <article>
-          
-          <a class="card-link article-nav-link" href="/2019/09/21/hello-world/"></a>
-          <div class="article-nav-caption">Older</div>
-          <div class="article-nav-title">我的第一篇博客</div>
-        </article>
-      </div>
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/09/21/hello-world/" rel="next" title="我的第一篇博客">
+                  <i class="fa fa-chevron-left"></i> 我的第一篇博客
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/09/23/冒泡排序/" rel="prev" title="冒泡排序">
+                  冒泡排序 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
     
   </div>
-</nav>
-
-    </div>
-    
-    
-
-  
-  <div class="valine-container">
-    <div id="valine_thread" class="valine-thread"></div>
-  </div>
-
   
   
-
-
+  
   </article>
-</div></section>
 
-    <!-- footer container -->
-<footer id="footer" class="footer">
-  <div class="footer-container">
-    <p>&copy; 2019 <a href="/" target="_blank">王顺利</a></p>
-
-    
-      <p id="hitokoto"></p>
-      <script src="https://v1.hitokoto.cn/?c=a&amp;encode=js&select=%23hitokoto" defer></script>
-    
-
-    
-
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank">flex-block</a></p>
-  </div>
-</footer>
   </div>
 
+
+          </div>
+          
+
+        </div>
+          
   
-  <!-- 尾部其他内容 -->
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#记录一下常用的SQL语句"><span class="nav-number">1.</span> <span class="nav-text">记录一下常用的SQL语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建数据库"><span class="nav-number">1.1.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select语句"><span class="nav-number">1.2.</span> <span class="nav-text">select语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-INSERT-INTO-语句"><span class="nav-number">1.3.</span> <span class="nav-text">SQL INSERT INTO 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-UPDATE-语句"><span class="nav-number">1.4.</span> <span class="nav-text">SQL UPDATE 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-DELETE-语句"><span class="nav-number">1.5.</span> <span class="nav-text">SQL DELETE 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-LIKE-操作符"><span class="nav-number">1.6.</span> <span class="nav-text">SQL LIKE 操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-IN-操作符"><span class="nav-number">1.7.</span> <span class="nav-text">SQL IN 操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-BETWEEN-操作符"><span class="nav-number">1.8.</span> <span class="nav-text">SQL BETWEEN 操作符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-别名"><span class="nav-number">2.</span> <span class="nav-text">SQL 别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#列的-SQL-别名语法"><span class="nav-number">2.1.</span> <span class="nav-text">列的 SQL 别名语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表的-SQL-别名语法"><span class="nav-number">2.2.</span> <span class="nav-text">表的 SQL 别名语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-SELECT-INTO-语句（SELECT-INTO-语句从一个表复制数据，然后把数据插入到另一个新表中。）"><span class="nav-number">2.3.</span> <span class="nav-text">SQL SELECT INTO 语句（SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-约束（Constraints）"><span class="nav-number">2.4.</span> <span class="nav-text">SQL 约束（Constraints）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRUNCATE-TABLE-语句（仅仅需要删除表内的数据，但并不删除表本身）"><span class="nav-number">2.5.</span> <span class="nav-text">TRUNCATE TABLE 语句（仅仅需要删除表内的数据，但并不删除表本身）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考自-菜鸟教程"><span class="nav-number">3.</span> <span class="nav-text">参考自 菜鸟教程</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">王顺利</p>
+  <div class="site-description" itemprop="description">记录生活，记录学习</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+        
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">王顺利</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/muse.js?v=7.4.0"></script>
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -236,95 +463,10 @@
 
 
   
+
   
-<!-- valine 评论 start -->
-<script type="text/javascript" src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script type="text/javascript" src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script type="text/javascript">
-  new Valine({
-    el: "#valine_thread",
-    appId: "d9KFRfmo9vRxwb4UsKhdMewM-gzGzoHsz",
-    appKey: "4dydtzdAC4Lmmcyupl92lArb",
-    avatar: "mm",
-    placeholder: "随便说点什么叭～",
-    notify: false,
-    visitor: false,
-    pageSize: 10,
-  });
-</script>
-<!-- valine 评论 end -->
 
+  
 
-
-<!-- dplayer 视频 start -->
-<link rel="stylesheet" href="/lib/DPlayer.min.css">
-<script src="/lib/DPlayer.min.js"></script>
-<script type="text/javascript">
-  const dplayer = document.querySelectorAll(".dplayer");
-  dplayer && initDPlayer(dplayer);
-  function initDPlayer(els) {
-    let elsArr = Array.from(els);
-    elsArr.forEach(el => {
-      let url = el.dataset.url;
-      let cover = el.dataset.cover;
-      new DPlayer({
-        container: el,
-        video: { url: url, pic: cover },
-        theme: "#b7daff",
-        autoplay: false,
-        loop: false,
-        mutex: true,
-      });
-    });
-  }
-</script>
-<!-- dplayer 视频 end -->
-
-
-<!-- waterfall 瀑布流 start -->
-<script src="/lib/waterfall.min.js"></script>
-<script type="text/javascript">
-
-const waterfallDOM = document.querySelector(".waterfall-container");
-
-if (waterfallDOM) {
-  initCss();
-  initWaterfall(".waterfall-container", waterfallDOM);
-}
-
-function initWaterfall(selector, el) {
-  const options = {};
-  if (Object.keys(el.dataset).length > 0) {
-    for (let k in el.dataset) {
-      options[k] = el.dataset[k];
-    }
-  }
-  waterfall(selector, options);
-}
-
-function initCss() {
-  let cssStyle = document.createElement("style")
-  cssStyle.innerText = `.waterfall-container p { display: block; border-radius: 4px; overflow: hidden; margin: 0; }`
-  document.head.appendChild(cssStyle);
-}
-</script>
-<!-- waterfall 瀑布流 end -->
-
-
-<!-- zoom 图片预览 start -->
-<script src="/lib/zoom.min.js"></script>
-<script>
-  document.querySelector(".zoom") && zoom(".zoom", {
-    margin: 15,
-    padding: 15,
-    radius: 5,
-    specify: "",
-    filter: "gallery",
-  });
-</script>
-<!-- zoom 图片预览 end -->
-
-
-<script src="/js/script.js"></script>
 </body>
 </html>
